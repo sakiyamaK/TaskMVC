@@ -10,7 +10,7 @@ import UIKit
 /*
  模範解答
 */
-final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class MVCSearchViewController: UIViewController {
 
   //パラメータを全てprivateにしてカプセル化している
   @IBOutlet private weak var searchTextField: UITextField!
@@ -59,12 +59,17 @@ final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITa
       }
     }
   }
+}
 
+extension MVCSearchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     //画面遷移を別クラスにまとめている
     Router.shared.showWeb(from: self, githubModel: items[indexPath.item])
   }
+}
+
+extension MVCSearchViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     items.count
