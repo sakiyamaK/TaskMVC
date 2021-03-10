@@ -8,74 +8,62 @@
 import UIKit
 
 /*
- Modelがありません
- データを取得するソースがコントローラに書かれています
- 強制アンラップがあります
- パラメータがカプセル化されていません
- 次の画面にモデルを渡していません
- 画面遷移の処理が直接ViewControllerに書かれています
- 修正してMVCにしてください
+ 模範解答
 */
 final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-  @IBOutlet weak var searchTextField: UITextField!
-  @IBOutlet weak var searchButton: UIButton! {
+  //パラメータを全てprivateにしてカプセル化している
+  @IBOutlet private weak var searchTextField: UITextField!
+  @IBOutlet private weak var searchButton: UIButton! {
     didSet {
       searchButton.addTarget(self, action: #selector(tapSearchButton(_sender:)), for: .touchUpInside)
     }
   }
 
-  @IBOutlet weak var indicator: UIActivityIndicatorView!
+  @IBOutlet private weak var indicator: UIActivityIndicatorView!
 
-  @IBOutlet weak var tavleView: UITableView! {
+  @IBOutlet private weak var tableView: UITableView! {
     didSet {
-      tavleView.register(UINib.init(nibName: MVCTableViewCell.className, bundle: nil), forCellReuseIdentifier: MVCTableViewCell.className)
-      tavleView.delegate = self
-      tavleView.dataSource = self
+      tableView.register(UINib.init(nibName: MVCTableViewCell.className, bundle: nil), forCellReuseIdentifier: MVCTableViewCell.className)
+      tableView.delegate = self
+      tableView.dataSource = self
     }
   }
 
-  var items: [(title: String, urlStr: String)] = []
+  //APIから取得したデータはモデル化している
+  private var items: [GithubModel] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    tavleView.isHidden = true
+    tableView.isHidden = true
     indicator.isHidden = true
   }
 
   @objc func tapSearchButton(_sender: UIResponder) {
+    guard let searchWord = searchTextField.text, !searchWord.isEmpty else { return }
     indicator.isHidden = false
-    tavleView.isHidden = true
-    let url: URL = URL(string: "https://api.github.com/search/repositories?q=\(searchTextField.text!)&sort=stars")!
-    let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-
-      guard let dic = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any],
-            let responseItems = dic["items"] as? [[String: Any]]
-            else {
-        return
-      }
-
-      self.items = responseItems.map({ (item) -> (String, String) in
-        let fullName = item["full_name"] as! String
-        return (fullName, "https://github.com/\(fullName)")
-      })
-
+    tableView.isHidden = true
+    //データの取得を別クラスに任せている
+    //サーバーからアクセスしていることもControllerは知る必要がない
+    GithubAPI.shared.get(searchWord: searchWord) { result in
       DispatchQueue.main.async {
         self.indicator.isHidden = true
-        self.tavleView.isHidden = false
-        self.tavleView.reloadData()
+        self.tableView.isHidden = false
+        switch result {
+        case .failure(let error):
+          print(error)
+        case .success(let items):
+          self.items = items
+          self.tableView.reloadData()
+        }
       }
-    })
-    task.resume()
+    }
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    let vc = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as! WebViewController
-    vc.urlStr = items[indexPath.item].urlStr
-
-    let nav = self.navigationController
-    nav?.pushViewController(vc, animated: true)
+    //画面遷移を別クラスにまとめている
+    Router.shared.showWeb(from: self, githubModel: items[indexPath.item])
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,9 +74,9 @@ final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITa
     guard let cell = tableView.dequeueReusableCell(withIdentifier: MVCTableViewCell.className) as? MVCTableViewCell else {
       fatalError()
     }
-    cell.titleLabel.text = items[indexPath.item].title
-    cell.urlLabel.text = items[indexPath.item].urlStr
+    let githubModel = items[indexPath.item]
+    //Viewがカプセル化されモデルだけ渡している
+    cell.configure(githubModel: githubModel)
     return cell
-
   }
 }

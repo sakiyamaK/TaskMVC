@@ -9,21 +9,29 @@ import UIKit
 import WebKit
 
 /*
- カプセル化されてません
- 前の画面からModelを受け取っていません
- 強制アンラップがあります
+ 模範解答
  */
 final class WebViewController: UIViewController {
 
-  @IBOutlet weak var webView: WKWebView!
+  //パラメータをカプセル化している
+  @IBOutlet private weak var webView: WKWebView!
 
-  var urlStr: String?
+  private var githubModel: GithubModel?
+
+  //外部からはモデルだけを受け取っている
+  func configure(githubModel: GithubModel) {
+    self.githubModel = githubModel
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let url = URL(string: urlStr!)!
-    let request = URLRequest(url: url)
-    webView.load(request)
+    //初期化パラメータが不正ならguardで弾いている
+    guard
+      let githubModel = githubModel,
+      let url = URL(string: githubModel.urlStr) else {
+      return
+    }
+    webView.load(URLRequest(url: url))
   }
 }

@@ -8,8 +8,7 @@
 import UIKit
 
 /*
- ハードコーディングがあります
- 強制アンラップがあります
+ 模範解答
  */
 
 @main
@@ -20,12 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-    let window = UIWindow(frame: UIScreen.main.bounds)
-    let vc = UIStoryboard.init(name: "MVCSearch", bundle: nil).instantiateInitialViewController()!
-    let nav = UINavigationController(rootViewController: vc)
-    window.rootViewController = nav
-    window.makeKeyAndVisible()
-    self.window = window
+    //起動を別クラスに任せている
+    Router.shared.showRoot(window: UIWindow(frame: UIScreen.main.bounds))
     return true
   }
 }

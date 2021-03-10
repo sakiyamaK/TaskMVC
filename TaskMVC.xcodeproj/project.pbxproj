@@ -12,10 +12,13 @@
 		B68AF84B25F855AC0067086D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF84A25F855AC0067086D /* AppDelegate.swift */; };
 		B68AF85425F855AC0067086D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68AF85325F855AC0067086D /* Assets.xcassets */; };
 		B68AF85725F855AC0067086D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68AF85525F855AC0067086D /* LaunchScreen.storyboard */; };
-		B68AF86B25F8566C0067086D /* MVCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68AF86A25F8566C0067086D /* MVCTableViewCell.xib */; };
-		B68AF86E25F856860067086D /* MVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF86D25F856860067086D /* MVCTableViewCell.swift */; };
-		B68AF88225F8A47F0067086D /* MVCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF88025F8A47F0067086D /* MVCSearchViewController.swift */; };
-		B68AF88325F8A47F0067086D /* MVCSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68AF88125F8A47F0067086D /* MVCSearch.storyboard */; };
+		B68AF88A25F8CA240067086D /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF88925F8CA240067086D /* GithubAPI.swift */; };
+		B68AF88E25F8CA300067086D /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF88D25F8CA300067086D /* GithubModel.swift */; };
+		B6BAEF2325F8D135006E7088 /* MVCSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BAEF1E25F8D135006E7088 /* MVCSearch.storyboard */; };
+		B6BAEF2425F8D135006E7088 /* MVCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF1F25F8D135006E7088 /* MVCSearchViewController.swift */; };
+		B6BAEF2525F8D135006E7088 /* MVCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BAEF2125F8D135006E7088 /* MVCTableViewCell.xib */; };
+		B6BAEF2625F8D135006E7088 /* MVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF2225F8D135006E7088 /* MVCTableViewCell.swift */; };
+		B6BAEF2925F8D1EA006E7088 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAEF2825F8D1EA006E7088 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +29,13 @@
 		B68AF85325F855AC0067086D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68AF85625F855AC0067086D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B68AF85825F855AC0067086D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B68AF86A25F8566C0067086D /* MVCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVCTableViewCell.xib; sourceTree = "<group>"; };
-		B68AF86D25F856860067086D /* MVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCTableViewCell.swift; sourceTree = "<group>"; };
-		B68AF88025F8A47F0067086D /* MVCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCSearchViewController.swift; sourceTree = "<group>"; };
-		B68AF88125F8A47F0067086D /* MVCSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVCSearch.storyboard; sourceTree = "<group>"; };
+		B68AF88925F8CA240067086D /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		B68AF88D25F8CA300067086D /* GithubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
+		B6BAEF1E25F8D135006E7088 /* MVCSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVCSearch.storyboard; sourceTree = "<group>"; };
+		B6BAEF1F25F8D135006E7088 /* MVCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCSearchViewController.swift; sourceTree = "<group>"; };
+		B6BAEF2125F8D135006E7088 /* MVCTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MVCTableViewCell.xib; sourceTree = "<group>"; };
+		B6BAEF2225F8D135006E7088 /* MVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCTableViewCell.swift; sourceTree = "<group>"; };
+		B6BAEF2825F8D1EA006E7088 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,15 +49,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B6030F1D25F8CB92004027AC /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				B68AF87F25F8A47F0067086D /* Controller */,
-				B68AF86925F856510067086D /* View */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		B6030F1F25F8CBFD004027AC /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,32 +85,60 @@
 		B68AF84925F855AC0067086D /* TaskMVC */ = {
 			isa = PBXGroup;
 			children = (
-				B6030F1F25F8CBFD004027AC /* Web */,
-				B6030F1D25F8CB92004027AC /* Search */,
 				B68AF84A25F855AC0067086D /* AppDelegate.swift */,
 				B68AF85325F855AC0067086D /* Assets.xcassets */,
-				B68AF85525F855AC0067086D /* LaunchScreen.storyboard */,
 				B68AF85825F855AC0067086D /* Info.plist */,
+				B68AF85525F855AC0067086D /* LaunchScreen.storyboard */,
+				B68AF88725F8CA110067086D /* Model */,
+				B6BAEF1C25F8D135006E7088 /* Search */,
+				B68AF88825F8CA170067086D /* Utility */,
+				B6030F1F25F8CBFD004027AC /* Web */,
 			);
 			path = TaskMVC;
 			sourceTree = "<group>";
 		};
-		B68AF86925F856510067086D /* View */ = {
+		B68AF88725F8CA110067086D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B68AF86A25F8566C0067086D /* MVCTableViewCell.xib */,
-				B68AF86D25F856860067086D /* MVCTableViewCell.swift */,
+				B68AF88D25F8CA300067086D /* GithubModel.swift */,
 			);
-			path = View;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		B68AF87F25F8A47F0067086D /* Controller */ = {
+		B68AF88825F8CA170067086D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				B68AF88025F8A47F0067086D /* MVCSearchViewController.swift */,
-				B68AF88125F8A47F0067086D /* MVCSearch.storyboard */,
+				B68AF88925F8CA240067086D /* GithubAPI.swift */,
+				B6BAEF2825F8D1EA006E7088 /* Router.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B6BAEF1C25F8D135006E7088 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B6BAEF1D25F8D135006E7088 /* Controller */,
+				B6BAEF2025F8D135006E7088 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B6BAEF1D25F8D135006E7088 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6BAEF1E25F8D135006E7088 /* MVCSearch.storyboard */,
+				B6BAEF1F25F8D135006E7088 /* MVCSearchViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6BAEF2025F8D135006E7088 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6BAEF2125F8D135006E7088 /* MVCTableViewCell.xib */,
+				B6BAEF2225F8D135006E7088 /* MVCTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,10 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68AF85725F855AC0067086D /* LaunchScreen.storyboard in Resources */,
-				B68AF86B25F8566C0067086D /* MVCTableViewCell.xib in Resources */,
+				B6BAEF2525F8D135006E7088 /* MVCTableViewCell.xib in Resources */,
 				B6030F2325F8CBFD004027AC /* Web.storyboard in Resources */,
 				B68AF85425F855AC0067086D /* Assets.xcassets in Resources */,
-				B68AF88325F8A47F0067086D /* MVCSearch.storyboard in Resources */,
+				B6BAEF2325F8D135006E7088 /* MVCSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,10 +213,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68AF86E25F856860067086D /* MVCTableViewCell.swift in Sources */,
+				B6BAEF2625F8D135006E7088 /* MVCTableViewCell.swift in Sources */,
+				B68AF88E25F8CA300067086D /* GithubModel.swift in Sources */,
 				B68AF84B25F855AC0067086D /* AppDelegate.swift in Sources */,
-				B68AF88225F8A47F0067086D /* MVCSearchViewController.swift in Sources */,
+				B6BAEF2925F8D1EA006E7088 /* Router.swift in Sources */,
 				B6030F2425F8CBFD004027AC /* WebViewController.swift in Sources */,
+				B68AF88A25F8CA240067086D /* GithubAPI.swift in Sources */,
+				B6BAEF2425F8D135006E7088 /* MVCSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
