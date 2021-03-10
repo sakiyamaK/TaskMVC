@@ -27,11 +27,11 @@ final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITa
 
   @IBOutlet weak var indicator: UIActivityIndicatorView!
 
-  @IBOutlet weak var tavleView: UITableView! {
+  @IBOutlet weak var tableView: UITableView! {
     didSet {
-      tavleView.register(UINib.init(nibName: MVCTableViewCell.className, bundle: nil), forCellReuseIdentifier: MVCTableViewCell.className)
-      tavleView.delegate = self
-      tavleView.dataSource = self
+      tableView.register(UINib.init(nibName: MVCTableViewCell.className, bundle: nil), forCellReuseIdentifier: MVCTableViewCell.className)
+      tableView.delegate = self
+      tableView.dataSource = self
     }
   }
 
@@ -39,13 +39,13 @@ final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITa
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    tavleView.isHidden = true
+    tableView.isHidden = true
     indicator.isHidden = true
   }
 
   @objc func tapSearchButton(_sender: UIResponder) {
     indicator.isHidden = false
-    tavleView.isHidden = true
+    tableView.isHidden = true
     let url: URL = URL(string: "https://api.github.com/search/repositories?q=\(searchTextField.text!)&sort=stars")!
     let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
 
@@ -62,8 +62,8 @@ final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITa
 
       DispatchQueue.main.async {
         self.indicator.isHidden = true
-        self.tavleView.isHidden = false
-        self.tavleView.reloadData()
+        self.tableView.isHidden = false
+        self.tableView.reloadData()
       }
     })
     task.resume()

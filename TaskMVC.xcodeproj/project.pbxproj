@@ -88,12 +88,12 @@
 		B68AF84925F855AC0067086D /* TaskMVC */ = {
 			isa = PBXGroup;
 			children = (
-				B6030F1F25F8CBFD004027AC /* Web */,
-				B6030F1D25F8CB92004027AC /* Search */,
 				B68AF84A25F855AC0067086D /* AppDelegate.swift */,
 				B68AF85325F855AC0067086D /* Assets.xcassets */,
-				B68AF85525F855AC0067086D /* LaunchScreen.storyboard */,
 				B68AF85825F855AC0067086D /* Info.plist */,
+				B68AF85525F855AC0067086D /* LaunchScreen.storyboard */,
+				B6030F1D25F8CB92004027AC /* Search */,
+				B6030F1F25F8CBFD004027AC /* Web */,
 			);
 			path = TaskMVC;
 			sourceTree = "<group>";
