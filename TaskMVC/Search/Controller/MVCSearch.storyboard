@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="ctg-4H-50b">
             <objects>
-                <viewController id="wOa-SI-twv" customClass="MVCViewController" customModule="TaskMVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wOa-SI-twv" customClass="MVCSearchViewController" customModule="TaskMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UiU-xH-lu7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rp-BC-pjy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Tlf-vo-UIj">
-                                                <rect key="frame" x="8" y="0.0" width="398" height="32"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="32"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggj-PK-uPZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="32"/>
@@ -41,20 +41,20 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="Tlf-vo-UIj" firstAttribute="top" secondItem="7Rp-BC-pjy" secondAttribute="top" id="Dbu-uh-mw1"/>
-                                            <constraint firstAttribute="bottom" secondItem="Tlf-vo-UIj" secondAttribute="bottom" id="m3j-3V-0JI"/>
+                                            <constraint firstItem="Tlf-vo-UIj" firstAttribute="top" secondItem="7Rp-BC-pjy" secondAttribute="top" constant="8" id="Dbu-uh-mw1"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tlf-vo-UIj" secondAttribute="bottom" constant="8" id="m3j-3V-0JI"/>
                                             <constraint firstItem="Tlf-vo-UIj" firstAttribute="leading" secondItem="7Rp-BC-pjy" secondAttribute="leading" constant="8" id="mdG-UR-pon"/>
                                             <constraint firstAttribute="trailing" secondItem="Tlf-vo-UIj" secondAttribute="trailing" constant="8" id="rZZ-aD-J9b"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QhE-DR-xks">
-                                        <rect key="frame" x="0.0" y="40" width="414" height="812"/>
+                                        <rect key="frame" x="0.0" y="56" width="414" height="796"/>
                                         <subviews>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LIG-bE-0rG">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="812"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
                                             </activityIndicatorView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tDu-SO-x7Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="812"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="796"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="separatorColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </tableView>

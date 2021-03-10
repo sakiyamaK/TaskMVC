@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6030F2325F8CBFD004027AC /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6030F2125F8CBFD004027AC /* Web.storyboard */; };
+		B6030F2425F8CBFD004027AC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6030F2225F8CBFD004027AC /* WebViewController.swift */; };
 		B68AF84B25F855AC0067086D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF84A25F855AC0067086D /* AppDelegate.swift */; };
 		B68AF85425F855AC0067086D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68AF85325F855AC0067086D /* Assets.xcassets */; };
 		B68AF85725F855AC0067086D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68AF85525F855AC0067086D /* LaunchScreen.storyboard */; };
 		B68AF86B25F8566C0067086D /* MVCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68AF86A25F8566C0067086D /* MVCTableViewCell.xib */; };
 		B68AF86E25F856860067086D /* MVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF86D25F856860067086D /* MVCTableViewCell.swift */; };
-		B68AF88225F8A47F0067086D /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF88025F8A47F0067086D /* MVCViewController.swift */; };
-		B68AF88325F8A47F0067086D /* MVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68AF88125F8A47F0067086D /* MVC.storyboard */; };
+		B68AF88225F8A47F0067086D /* MVCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF88025F8A47F0067086D /* MVCSearchViewController.swift */; };
+		B68AF88325F8A47F0067086D /* MVCSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68AF88125F8A47F0067086D /* MVCSearch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6030F2125F8CBFD004027AC /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
+		B6030F2225F8CBFD004027AC /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B68AF84725F855AC0067086D /* TaskMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68AF84A25F855AC0067086D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68AF85325F855AC0067086D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -24,8 +28,8 @@
 		B68AF85825F855AC0067086D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68AF86A25F8566C0067086D /* MVCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVCTableViewCell.xib; sourceTree = "<group>"; };
 		B68AF86D25F856860067086D /* MVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCTableViewCell.swift; sourceTree = "<group>"; };
-		B68AF88025F8A47F0067086D /* MVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
-		B68AF88125F8A47F0067086D /* MVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVC.storyboard; sourceTree = "<group>"; };
+		B68AF88025F8A47F0067086D /* MVCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCSearchViewController.swift; sourceTree = "<group>"; };
+		B68AF88125F8A47F0067086D /* MVCSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVCSearch.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6030F1D25F8CB92004027AC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B68AF87F25F8A47F0067086D /* Controller */,
+				B68AF86925F856510067086D /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B6030F1F25F8CBFD004027AC /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				B6030F2025F8CBFD004027AC /* Controller */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		B6030F2025F8CBFD004027AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6030F2125F8CBFD004027AC /* Web.storyboard */,
+				B6030F2225F8CBFD004027AC /* WebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B68AF83E25F855AC0067086D = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +88,8 @@
 		B68AF84925F855AC0067086D /* TaskMVC */ = {
 			isa = PBXGroup;
 			children = (
-				B68AF87F25F8A47F0067086D /* Controller */,
-				B68AF86925F856510067086D /* View */,
+				B6030F1F25F8CBFD004027AC /* Web */,
+				B6030F1D25F8CB92004027AC /* Search */,
 				B68AF84A25F855AC0067086D /* AppDelegate.swift */,
 				B68AF85325F855AC0067086D /* Assets.xcassets */,
 				B68AF85525F855AC0067086D /* LaunchScreen.storyboard */,
@@ -80,8 +110,8 @@
 		B68AF87F25F8A47F0067086D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B68AF88025F8A47F0067086D /* MVCViewController.swift */,
-				B68AF88125F8A47F0067086D /* MVC.storyboard */,
+				B68AF88025F8A47F0067086D /* MVCSearchViewController.swift */,
+				B68AF88125F8A47F0067086D /* MVCSearch.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,8 +175,9 @@
 			files = (
 				B68AF85725F855AC0067086D /* LaunchScreen.storyboard in Resources */,
 				B68AF86B25F8566C0067086D /* MVCTableViewCell.xib in Resources */,
+				B6030F2325F8CBFD004027AC /* Web.storyboard in Resources */,
 				B68AF85425F855AC0067086D /* Assets.xcassets in Resources */,
-				B68AF88325F8A47F0067086D /* MVC.storyboard in Resources */,
+				B68AF88325F8A47F0067086D /* MVCSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +190,8 @@
 			files = (
 				B68AF86E25F856860067086D /* MVCTableViewCell.swift in Sources */,
 				B68AF84B25F855AC0067086D /* AppDelegate.swift in Sources */,
-				B68AF88225F8A47F0067086D /* MVCViewController.swift in Sources */,
+				B68AF88225F8A47F0067086D /* MVCSearchViewController.swift in Sources */,
+				B6030F2425F8CBFD004027AC /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,11 @@
 
 import UIKit
 
+/*
+ ハードコーディングがあります
+ 強制アンラップがあります
+ */
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let window = UIWindow(frame: UIScreen.main.bounds)
-    window.rootViewController = UIStoryboard.init(name: "MVC", bundle: nil).instantiateInitialViewController()
+    let vc = UIStoryboard.init(name: "MVCSearch", bundle: nil).instantiateInitialViewController()!
+    let nav = UINavigationController(rootViewController: vc)
+    window.rootViewController = nav
     window.makeKeyAndVisible()
     self.window = window
     return true

@@ -10,10 +10,13 @@ import UIKit
 /*
  Modelがありません
  データを取得するソースがコントローラに書かれています
+ 強制アンラップがあります
+ パラメータがカプセル化されていません
+ 次の画面にモデルを渡していません
+ 画面遷移の処理が直接ViewControllerに書かれています
  修正してMVCにしてください
- */
-
-final class MVCViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+*/
+final class MVCSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var searchTextField: UITextField!
   @IBOutlet weak var searchButton: UIButton! {
@@ -54,8 +57,7 @@ final class MVCViewController: UIViewController, UITableViewDelegate, UITableVie
 
       self.items = responseItems.map({ (item) -> (String, String) in
         let fullName = item["full_name"] as! String
-        let urlStr = item["url"] as! String
-        return (fullName, urlStr)
+        return (fullName, "https://github.com/\(fullName)")
       })
 
       DispatchQueue.main.async {
@@ -69,6 +71,11 @@ final class MVCViewController: UIViewController, UITableViewDelegate, UITableVie
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    let vc = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as! WebViewController
+    vc.urlStr = items[indexPath.item].urlStr
+
+    let nav = self.navigationController
+    nav?.pushViewController(vc, animated: true)
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
